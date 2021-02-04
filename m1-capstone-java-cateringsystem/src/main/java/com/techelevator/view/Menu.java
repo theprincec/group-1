@@ -7,6 +7,37 @@ import java.util.Scanner;
  */
 public class Menu {
 	
-	private static final Scanner in = new Scanner(System.in);
+	private  final Scanner in = new Scanner(System.in);
 	
+	
+	public String mainMenuDispay() {
+		String userInput = "";
+		System.out.println( " Main Menu ");
+		System.out.println(" ================================================= ");		
+		System.out.println(" 1) Display Catering Items " );
+		System.out.println(" 2) Order " );
+		System.out.println(" 3) Quit " );
+		return in.nextLine();
+		
+	
+		//}
+	
+	
+		//return ;
+
+	//	}
+		
+	
+		
+		//return  getUserChoice;
+		//	}
+	
+	//
+	//private int getUserChoice() {
+		
+		
+	
+	
+	}
 }
+

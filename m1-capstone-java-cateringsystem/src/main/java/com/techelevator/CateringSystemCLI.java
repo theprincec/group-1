@@ -11,7 +11,7 @@ import com.techelevator.view.Menu;
  * call from here. 
  */
 public class CateringSystemCLI {
-
+	
 	/*
 	 * The menu class is instantiated in the main() method at the bottom of this file.  
 	 * It is the only class instantiated in the starter code.  
@@ -20,16 +20,41 @@ public class CateringSystemCLI {
 	 * Remember every class and data structure is a data types and can be passed as arguments to methods or constructors.
 	 */
 	private Menu menu;
+	private CsvReader csvreader;
 
 	public CateringSystemCLI(Menu menu) {
 		this.menu = menu;
 	}
+	
+	public CateringSystemCLI(CsvReader csvreader) {
+		this.csvreader = csvreader;
+	}
 
 	/*
 	 * Your application starts here
+	
 	 */
+	
+	String listOfPossibleItems = "";
+	
 	public void run() {
 		while (true) {
+			
+		
+			
+			
+			String choice = menu.mainMenuDispay();
+			if (choice.equals("1")) {
+				
+				csvreader.getItemsFromFile(); 
+			}
+			if (choice.equals("3")) {
+				break;
+			}
+		}
+		//return "Not a valid selection" ;
+	}	
+		
 			/*
 			Display the Starting Menu and get the users choice
 			
@@ -38,15 +63,23 @@ public class CateringSystemCLI {
 			ELSE IF the User's Choice is Purchase,
 				THEN go to the purchase menu
 			*/
-		}
-	}
+				
+			
+	
 
 	/*
 	 * This starts the application, but you shouldn't need to change it.  
 	 */
 	public static void main(String[] args) {
+	
+		CsvReader csvReader = new CsvReader();
+		
 		Menu menu = new Menu();
+		System.out.println("");
 		CateringSystemCLI cli = new CateringSystemCLI(menu);
 		cli.run();
 	}
+	
+	
+	
 }
