@@ -14,12 +14,19 @@ public class CapstoneMasterPlan {
 	//Menu
 	/*
 	 * Takes user through possible options and displays 
-	 * 		1.prompts user for input
-	 * 		2. displays possibleItems and allows user to make selection
+	 * 		1.displays possibleItems
+	 * 		2.  allows user to make selection
 	 * 			- asks user for selection
 	 * 			- asks user for quantity
 	 * 			- asks for a deposit
-	 * 		3. adds userSelections to cart(may have to make new class) or transaction
+	 *		3. adds userSelections to cart(may have to make new class) or transaction
+	 *
+	 *		Under Order Menu
+	 *		1. Make a selection - prompts user for product code (getter for product code)
+	 *		2. select quantity - pulls quantity from itemQuantity)
+	 *		3.add items to cart - adds items to TemporaryCart
+	 *
+	 *
 	 */
 	
 	
@@ -55,12 +62,7 @@ public class CapstoneMasterPlan {
 	 * -----Calls getProductName and getItemQuantity-----
 	 * 
 	 * 1. Where we calculate quantity 
-	 * 		if (count == 0 ){
-			throw new Exception("Item is Sold Out. ");
-		} else if (count - numberOfItems >= 0) {
-			count-=numberOfItems;
-		} else {
-			throw new Exception("Sorry we only have " + count + " left. Try again. ");
+	 * 		
 	 * 2.
 	 */
 	
@@ -92,18 +94,22 @@ public class CapstoneMasterPlan {
 	
 	
 //com.techelevator.transaction
-	//Cart
+
 	
 	
 	//Checkout
 	/*
 	 * 1. Where we can MakeChange method and calculate the change from the total adding the remainder into the UserAccount
+	 * 2.withdraw itemtotal from user balance 
 	 */
 	
 	
 	//Transaction
 	/*
 	 * 1. Where we remove purchased items from total inventory
+	 * 2. add user selected items
+	 * 3. calculate total
+	 * 
 	 */
 	
 	
@@ -119,6 +125,8 @@ public class CapstoneMasterPlan {
 	/*
 	 * 1. We can either make subclasses for all Bill denominations or we can convert all into cents and pass it to a double
 	 */
+	
+	
 	
 	
 	

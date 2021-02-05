@@ -1,8 +1,10 @@
 package com.techelevator;
 
 import java.util.List;
+import java.util.Scanner;
 
 import com.techelevator.readandwrite.CsvReader;
+import com.techelevator.readandwrite.ObjectConverter;
 import com.techelevator.view.Menu;
 
 /*
@@ -24,7 +26,7 @@ public class CateringSystemCLI {
 	 */
 	private Menu menu;
 	private CsvReader csvreader;
-	
+	private ObjectConverter objectConverter;
 	/*
 	 * Constructor for listOfLines
 	 */
@@ -52,17 +54,31 @@ public class CateringSystemCLI {
 			
 			String choice = menu.mainMenuDispay();
 			if (choice.equals("1")) {
+				csvreader.getItemsFromFile(); 
+				//choice = menu.placeOrder();
+				System.out.println();
+				choice = menu.mainMenuDispay();
 				
-				
-				return; //csvreader.getItemsFromFile();
-				//csvreader.getItemsFromFile(); 
+				}
+			if (choice.equals("2") ) {
+				System.out.println();
+				//choice = menu.placeOrder();
+				choice = menu.placeOrderSelection();
+				//if ( 1 = 1) {
+				//	System.out.println(menu.placeOrderQuantity());
 			}
+			
+	
+			
 			if (choice.equals("3")) {
+				System.out.println();
+				System.out.println(" Thanks for shopping!");
 				break;
 			}
 		}
+		}
 		//return "Not a valid selection" ;
-	}	
+		
 		
 			/*
 			Display the Starting Menu and get the users choice
@@ -82,12 +98,12 @@ public class CateringSystemCLI {
 	public static void main(String[] args) {
 	
 		CsvReader csvReader = new CsvReader();
-		
+		ObjectConverter objectConverter = new ObjectConverter();
 		Menu menu = new Menu();
 		System.out.println("");
 		CateringSystemCLI cli = new CateringSystemCLI(menu, csvReader);
 		cli.run();
-	}
+	} 
 	
 	
 	

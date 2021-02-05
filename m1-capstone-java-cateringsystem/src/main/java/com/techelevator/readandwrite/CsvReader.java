@@ -6,44 +6,55 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 
 
 
-public class CsvReader  {
-	public static void main(String[] args, Object String) throws IOException {
+public class CsvReader   {
+	//public static void main(String[] args) {
+		List<String> listOfLines = new ArrayList<>();
+		
+		
 		
 		/*
 		 * BufferedReader that prints lines to console as well
 		 */
-		
+		/*
 		
 		BufferedReader bufReader = new BufferedReader(new FileReader("cateringsystem.csv"));
-		List<String> listOfLines = new ArrayList<>();		
+		
 		
 		String line = bufReader.readLine();
 		while (line != null) {
 			listOfLines.add(line);
 			line = bufReader.readLine();
+
 		}
 		
 		bufReader.close();
 		
 		System.out.println(listOfLines);
+		*/
 		
 		/*
 		 * Try loop that prints file to console
 		 */
 		
 		
+		public void getItemsFromFile() {
 		
-	try {
+		try {
+		
 		File myObj = new File ("cateringsystem.csv");
 		Scanner myReader = new Scanner(myObj);
 		while (myReader.hasNextLine()) {
 			String data = myReader.nextLine();
+			System.out.println(data);
+			listOfLines.add(data);
 			System.out.println(data);
 		}
 		myReader.close();
@@ -51,13 +62,13 @@ public class CsvReader  {
 		System.out.println("An error occured");
 		e.printStackTrace();
 		
-		
-		
+	}
+
+	}
+
 		
 	}
-	
-	}
-	
+//}
 	
 	/*
 	 * End of try loop that prints to console
@@ -108,7 +119,7 @@ public class CsvReader  {
 	 * Previous code ends
 	 */
 			
-	}
+	
 
 
 

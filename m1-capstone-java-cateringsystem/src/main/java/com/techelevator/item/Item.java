@@ -1,7 +1,9 @@
 package com.techelevator.item;
 
-public class Item {
+import java.util.List;
 
+public class Item {
+	
 	private String productName;
 	private double price;
 	private String productCode;
@@ -10,7 +12,7 @@ public class Item {
 	
 	public Item( String productCode,String name, double price) {
 		
-		this.productName = productName;
+		this.productName = name;
 		this.price = price;
 		this.productCode = productCode;
 		this.itemQuantity =50;
@@ -18,6 +20,7 @@ public class Item {
 	}
 
 
+	
 	public String getProductName() {
 		return productName;
 	}
@@ -37,6 +40,31 @@ public class Item {
 		return itemQuantity;
 	}
 
+
+	
+	
+	public void returnItem (int numberOfItems) {
+		
+	if (itemQuantity == 0 ){
+		System.out.println("Sold Out.");
+	
+	}
+		itemQuantity+=numberOfItems;
+	
+	}
+	
+	
+	public void removeItem (int numberOfItems) {
+		
+	if (itemQuantity == 0 ){
+		System.out.println("Sold Out.");
+	
+	} else if (itemQuantity - numberOfItems >= 0) {
+		itemQuantity-=numberOfItems;
+	} else if (itemQuantity - numberOfItems < 0) {
+		System.out.println("only " + itemQuantity + " left");
+	}
+	}
 	
 	
 	
