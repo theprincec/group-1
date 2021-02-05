@@ -1,5 +1,8 @@
 package com.techelevator;
 
+import java.util.List;
+
+import com.techelevator.readandwrite.CsvReader;
 import com.techelevator.view.Menu;
 
 /*
@@ -21,14 +24,18 @@ public class CateringSystemCLI {
 	 */
 	private Menu menu;
 	private CsvReader csvreader;
+	
+	/*
+	 * Constructor for listOfLines
+	 */
+	
 
-	public CateringSystemCLI(Menu menu) {
+	public CateringSystemCLI(Menu menu, CsvReader csvreader) {
+		this.csvreader = csvreader;
 		this.menu = menu;
 	}
 	
-	public CateringSystemCLI(CsvReader csvreader) {
-		this.csvreader = csvreader;
-	}
+	
 
 	/*
 	 * Your application starts here
@@ -46,7 +53,9 @@ public class CateringSystemCLI {
 			String choice = menu.mainMenuDispay();
 			if (choice.equals("1")) {
 				
-				csvreader.getItemsFromFile(); 
+				
+				return; //csvreader.getItemsFromFile();
+				//csvreader.getItemsFromFile(); 
 			}
 			if (choice.equals("3")) {
 				break;
@@ -76,7 +85,7 @@ public class CateringSystemCLI {
 		
 		Menu menu = new Menu();
 		System.out.println("");
-		CateringSystemCLI cli = new CateringSystemCLI(menu);
+		CateringSystemCLI cli = new CateringSystemCLI(menu, csvReader);
 		cli.run();
 	}
 	
