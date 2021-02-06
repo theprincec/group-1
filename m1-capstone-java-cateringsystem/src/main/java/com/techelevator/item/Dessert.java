@@ -4,7 +4,7 @@ public class Dessert extends Item {
 
 	//Changed from DOuble to string
 	
-	public Dessert(String productCode, String name, String price) {
+	public Dessert(String productCode, String name, double price) {
 		super(productCode, name, price);
 		// TODO Auto-generated constructor stub
 	}
