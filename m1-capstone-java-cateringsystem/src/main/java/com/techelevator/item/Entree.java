@@ -4,7 +4,9 @@ public class Entree extends Item {
 
 	//Changed from DOuble to string
 	
-	public Entree(String productCode, String name, double price) {
+
+	public Entree(String productCode, String name, Double price) {
+
 		super(productCode, name, price);
 		// TODO Auto-generated constructor stub
 	}

@@ -63,58 +63,33 @@ public class CateringSystemCLI {
 				
 			
 			
-			choice = menu.mainMenuDispay();
-			if (choice == 1) {
-				csvreader.getItemsFromFile(); 
+
+			String choice = menu.mainMenuDispay();
+
+			if (choice.equals("1")) {
+				csvreader.getItemsFromFilePrint(); 
+
 				//choice = menu.placeOrder();
 				System.out.println();
 				choice = menu.mainMenuDispay();
 				}
-			
-			if (choice == 2) {
+
+			if (choice.equals("2") ) {
+				//System.out.println("does work");
+				//choice = menu.placeOrder();
+				choice = menu.placeOrderSelection();
+				//if ( 1 = 1) {
+				//	System.out.println(menu.placeOrderQuantity());
+			}
+
+			if (choice.equals("3"));
 				System.out.println();
-				choice = menu.displayPurchaseMenu();
-				}
-	
-			
-			if (choice == 3) {
-				System.out.println();
-				System.out.println(" Thanks for shopping!");
+				System.out.println("Thanks for Shopping");
 				break;
-				}
 				}
 	}
 		
-	public String runDisplayPurchaseMenu () {
-		while (true) {
-			
-			 choice =  menu.displayPurchaseMenu();
-			
-			if (choice == 1) {
-				//call method in menu that asks for user deposit and displays on the next line HERE
-				System.out.println(" Add Funds" );//Where we call methods that add the amount to deposit + return account balance
-			} 
-			
-			if (choice == 2) {
-				System.out.println("Enter a product code");
-				//call a method that asks user for product code
-				//call method that gets item from product code
-				//call method that asks user for quantity
-				//call method INSIDE TRANSACTIONS that takes (getProductCode) and (user item (userquantity)
-					//and adds to cart
-				//Print (quantity + item.getName + item.getProductCode)
-				
-			}
-			
-			if (choice == 3) {
-				System.out.println("Checkout");
-				//IN MENU call method that displays change
-				//IN MENU call method that displays receipt
-				//Print "Change: getaccountBalance
-			}
-	}	
-	}
-
+	
 		
 		
 		
