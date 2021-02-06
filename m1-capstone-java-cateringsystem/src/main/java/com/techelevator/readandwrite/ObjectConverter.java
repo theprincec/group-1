@@ -17,17 +17,17 @@ public class ObjectConverter {
 		
 	//splitting listoflines into categories
 	
-	public char[] itemKeyName;
+	
 
-	public void objConverter(List<String>listOfLines) {
-		
+	public Map<String, Item> objConverter(List<String>listOfLines) {
+	Map<String, Item> itemKeyName = new LinkedHashMap<String, Item>();
 	for (String  lineItem: listOfLines) {
-		Map<String, Item> itemKeyName = new LinkedHashMap<String, Item>();
+		
 		String[] splitItem = new String[4];
 		splitItem = lineItem.split("|");
 		
 		String productCode = splitItem[0];
-		double price = Double.parseDouble(splitItem[2]) ;
+		String price = (splitItem[2]) ;
 		String name = splitItem[1];
 		
 		
@@ -53,18 +53,18 @@ public class ObjectConverter {
 			
 		
 			//Puts Product code as key and Item as Value
-			
 		itemKeyName.put(productCode, item);
+		
 		
 	
 			}
 	
-		
+	return itemKeyName;
 		
 			
 		}
 	
-	public static void main(String[] args){
+	
 		
-	}
+	
 }

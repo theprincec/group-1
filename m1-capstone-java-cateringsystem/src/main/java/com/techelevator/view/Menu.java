@@ -22,7 +22,7 @@ public class Menu {
 	private
 	
 	ObjectConverter objectConverter = new ObjectConverter();
-	
+	CsvReader csvReader = new CsvReader();
 	String userInput = "";
 	
 	
@@ -70,8 +70,8 @@ public class Menu {
 		//If the list contains the user selection 
 		//InputStream x =System.in ;
 		String userInputSelection = in.nextLine();
-		if (!objectConverter.itemKeyName.containsKey(userInputSelection)) {
-			placeOrderQuantity();
+		if (objectConverter.objConverter(csvReader.getItemsFromFile()).containsKey(userInputSelection)) {
+			return placeOrderQuantity();
 			/*
 			 * 1. Select productcode
 			 * 2.select quantity

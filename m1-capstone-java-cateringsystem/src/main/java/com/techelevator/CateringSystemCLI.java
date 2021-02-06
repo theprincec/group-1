@@ -63,7 +63,7 @@ public class CateringSystemCLI {
 			if (choice.equals("2") ) {
 				System.out.println();
 				//choice = menu.placeOrder();
-				//choice = menu.placeOrderSelection();
+				choice = menu.placeOrderSelection();
 				//if ( 1 = 1) {
 				//	System.out.println(menu.placeOrderQuantity());
 			}

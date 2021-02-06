@@ -45,7 +45,7 @@ public class CsvReader   {
 		 */
 		
 		
-		public void getItemsFromFile() {
+		public List<String> getItemsFromFile() {
 		
 		try {
 		
@@ -57,6 +57,9 @@ public class CsvReader   {
 			listOfLines.add(data);
 			System.out.println(data);
 		}
+		
+		
+		
 		myReader.close();
 	} catch (FileNotFoundException e) {
 		System.out.println("An error occured");
@@ -64,6 +67,8 @@ public class CsvReader   {
 		
 	}
 
+		return listOfLines;
+		
 	}
 
 		
