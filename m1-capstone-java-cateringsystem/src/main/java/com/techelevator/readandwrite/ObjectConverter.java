@@ -12,14 +12,17 @@ import com.techelevator.item.Item;
 import com.techelevator.readandwrite.CsvReader;
 
 public class ObjectConverter {
-	public Map<String, Item> itemKeyName = new LinkedHashMap<String, Item>();
+	//public Map<String, Item> itemKeyName = new LinkedHashMap<String, Item>();
 	
 		
 	//splitting listoflines into categories
 	
+	public char[] itemKeyName;
+
 	public void objConverter(List<String>listOfLines) {
 		
 	for (String  lineItem: listOfLines) {
+		Map<String, Item> itemKeyName = new LinkedHashMap<String, Item>();
 		String[] splitItem = new String[4];
 		splitItem = lineItem.split("|");
 		
@@ -30,6 +33,8 @@ public class ObjectConverter {
 		
 		//Instatiating objects from based on item type
 	
+		
+		
 		Item item = null;
 		
 		if (splitItem[3].equals("A")) {
@@ -50,6 +55,7 @@ public class ObjectConverter {
 			//Puts Product code as key and Item as Value
 			
 		itemKeyName.put(productCode, item);
+		
 	
 			}
 	
@@ -58,5 +64,7 @@ public class ObjectConverter {
 			
 		}
 	
-	
+	public static void main(String[] args){
+		
+	}
 }

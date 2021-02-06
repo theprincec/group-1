@@ -17,7 +17,7 @@ import com.techelevator.readandwrite.*;
 public class Menu {
 	
 	private  final Scanner in = new Scanner(System.in);
-	private CsvReader csvreader;
+
 	//private ObjectConverter objectConverter;
 	private
 	
@@ -70,8 +70,8 @@ public class Menu {
 		//If the list contains the user selection 
 		//InputStream x =System.in ;
 		String userInputSelection = in.nextLine();
-		if (objectConverter.itemKeyName.containsKey(userInputSelection)) {
-			System.out.println("Yes");
+		if (!objectConverter.itemKeyName.containsKey(userInputSelection)) {
+			placeOrderQuantity();
 			/*
 			 * 1. Select productcode
 			 * 2.select quantity
@@ -83,7 +83,6 @@ public class Menu {
 			//System.out.println("Make a new selection");
 			//return in.nextLine();
 		} return "";
-		
 	}
 
 		
