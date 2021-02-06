@@ -49,6 +49,7 @@ public class Item {
 	
 	public int returnItem (int numberOfItems) {
 		
+
 	if (itemQuantity == 0 ){
 		System.out.println("Sold Out.");
 		}
@@ -58,6 +59,18 @@ public class Item {
 	
 	
 	public int removeItem (int numberOfItems) {
+
+//	if (itemQuantity == 0 ){
+//		System.out.println("Sold Out.");
+//	
+//	}
+		return itemQuantity+=numberOfItems;
+	
+	}
+	
+	
+	public String addItem (int numberOfItems) {
+
 		
 	if (itemQuantity == 0 ){
 		System.out.println("Sold Out.");
@@ -67,7 +80,7 @@ public class Item {
 		} else if (itemQuantity - numberOfItems < 0) {
 		System.out.println("only " + itemQuantity + " left");
 		}
-			return 0;
+			return "";
 	} 
 	
 	

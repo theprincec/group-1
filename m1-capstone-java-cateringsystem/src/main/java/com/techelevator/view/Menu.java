@@ -11,6 +11,7 @@ import com.techelevator.item.Dessert;
 import com.techelevator.item.Entree;
 import com.techelevator.item.Item;
 import com.techelevator.readandwrite.*;
+import com.techelevator.transaction.UserAccount;
 
 
 
@@ -26,7 +27,9 @@ public class Menu {
 	
 	ObjectConverter objectConverter = new ObjectConverter();
 	//CsvReader csvReader = new CsvReader();
-	String userInput = "";
+	//String userInput = "";
+	UserAccount userAccount = new UserAccount(0);
+	//Item item = new Item()
 	
 	
 	public String mainMenuDispay() {
@@ -57,16 +60,32 @@ public class Menu {
 	
 		System.out.println(" Order ");
 		System.out.println(" ================================================== ");
-		System.out.println(" 1) Make a selection ");
+		System.out.println(" 1) Add Funds ");
+		System.out.println(" 2) Make a selection ");
+		System.out.println(" 3) Checkout ");
+		System.out.println(" Your Account Balance is" ;   //************
 			
 		//System.out.println(" 2) select quantity ");
 		
 		//System.out.println(" 3) add items to cart");
+		
+		String userChoice = in.nextLine();
+		
+		if (mainMenuOrderSelection.matches("1")) {
+			// accesses the account to add money
+			
+		} else if (mainMenuOrderSelection.matches("2")) {
+			
+			//sfs
+		} else if(mainMenuOrderSelection.matches("3"))  {
+			
+		}
 		return in.nextLine();
 	}
 		
 	
-	String userInputSelection = in.nextLine();
+	String userInputSelection = "";
+	userInputSelection = in.nextLine();
 	
 	public String placeOrderSelection() {
 		System.out.println(" Order ");
@@ -81,7 +100,8 @@ public class Menu {
 		
 		
 		if (newMapofItems.containsKey(userInputSelection)) {
-			return placeOrderQuantity1();
+			String checkedUserInputSelection = userInputSelection;
+			return placeOrderQuantity();
 			System.out.println("This works. its a miracle.");
 		}
 			return "This Is not a valid selection. Please select another item";
@@ -100,24 +120,25 @@ public class Menu {
 							//			//return in.nextLine();
 							//		} System.out.println( "Doesnt work, obvi");
 
-	public String placeOrderQuantity1() {
-		userInput = "";
+	public String placeOrderQuantity() {
+		//String userInputQuantity = "";
 		System.out.println(" Select Quantity ");
 		System.out.println(" ================================================== ");
 		System.out.println(" 2) select quantity ");
 		
 		String userInputQuantity = in.nextLine();
-		int userInputQuantityAsInt = Integer.parseInt(userInputQuantity);
+		int userInputQuantityAsInt = 0;
+		userInputQuantityAsInt = Integer.parseInt(userInputQuantity);
 	
-		removeItem(userInputQuantityAsInt);  //Need to Instantiate
+		cartList(userInputSelection).addItem(newMapOfItems.getValue(userInputSelection));  //Need to Instantiate
 		addItemToCart(newMapofItems.getValue(userInputSelection)); //in Cart class
 		
 		
 		System.out.print("Your item was added to your cart. Make another selection");
 		//System.out.println("This works. Its a miracle.");
-		}
+		
 			
-		return mainMenuDispay();
+		return placeOrderSelection();
 //			/*
 //			 * 1. Select productcode
 //			 * 2.select quantity
@@ -129,12 +150,12 @@ public class Menu {
 //			//System.out.println("Make a new selection");
 //			//return in.nextLine();
 //		} System.out.println( "Doesnt work, obvi");
-		return "";
 	}
+	
 		
 		
-		return in.nextLine();
-	}
+		//return in.nextLine();
+	//}
 		
 	private String checkItemType(Item item) {
 		if (item instanceof Appetizer) {
