@@ -54,14 +54,14 @@ public class CateringSystemCLI {
 			
 			String choice = menu.mainMenuDispay();
 			if (choice.equals("1")) {
-				csvreader.getItemsFromFile(); 
+				csvreader.getItemsFromFilePrint(); 
 				//choice = menu.placeOrder();
 				System.out.println();
 				choice = menu.mainMenuDispay();
 				
 				}
 			if (choice.equals("2") ) {
-				System.out.println();
+				//System.out.println("does work");
 				//choice = menu.placeOrder();
 				choice = menu.placeOrderSelection();
 				//if ( 1 = 1) {

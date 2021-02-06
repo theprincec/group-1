@@ -5,12 +5,12 @@ import java.util.List;
 public class Item {
 	
 	private String productName;
-	private String price;
+	private Double price;
 	private String productCode;
 	private int itemQuantity;
 	
 	
-	public Item( String productCode,String name, String price) {
+	public Item( String productCode,String name, Double price) {
 		
 		this.productName = name;
 		this.price = price;
@@ -26,7 +26,7 @@ public class Item {
 	}
 
 
-	public String getPrice() {
+	public Double getPrice() {
 		return price;
 	}
 

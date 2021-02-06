@@ -1,5 +1,7 @@
 package com.techelevator.view;
 import java.io.InputStream;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 import com.techelevator.item.Appetizer;
@@ -22,7 +24,7 @@ public class Menu {
 	private
 	
 	ObjectConverter objectConverter = new ObjectConverter();
-	CsvReader csvReader = new CsvReader();
+	//CsvReader csvReader = new CsvReader();
 	String userInput = "";
 	
 	
@@ -62,36 +64,73 @@ public class Menu {
 		return in.nextLine();
 	}
 		
+	
+	String userInputSelection = in.nextLine();
+	
 	public String placeOrderSelection() {
 		System.out.println(" Order ");
 		System.out.println(" ================================================== ");
 		System.out.println(" 1) Make a selection ");
 		
-		//If the list contains the user selection 
-		//InputStream x =System.in ;
-		String userInputSelection = in.nextLine();
-		if (objectConverter.objConverter(csvReader.getItemsFromFile()).containsKey(userInputSelection)) {
-			return placeOrderQuantity();
-			/*
-			 * 1. Select productcode
-			 * 2.select quantity
-			 * 3. Add to cart
-			 * 4. subtract from itemquantity(TemporaryCart)
-			 */
+		
+		//String userInputSelection = in.nextLine();  *added outside of scope*
+		
+		Map<String, Item> newMapofItems = new LinkedHashMap<String, Item>();
+		newMapofItems = objectConverter.mapMaker();
+		
+		
+		if (newMapofItems.containsKey(userInputSelection)) {
+			return placeOrderQuantity1();
+			System.out.println("This works. its a miracle.");
+		}
+			return "This Is not a valid selection. Please select another item";
 			
-			//return placeOrderQuantity();
-			//System.out.println("Make a new selection");
-			//return in.nextLine();
-		} return "";
 	}
 
-		
-	public String placeOrderQuantity() {
+			//			/*
+							//			 * 1. Select productcode
+							//			 * 2.select quantity
+							//			 * 3. Add to cart
+							//			 * 4. subtract from itemquantity(TemporaryCart)
+							//			 */
+							//			
+							//			//return placeOrderQuantity();
+							//			//System.out.println("Make a new selection");
+							//			//return in.nextLine();
+							//		} System.out.println( "Doesnt work, obvi");
+
+	public String placeOrderQuantity1() {
 		userInput = "";
 		System.out.println(" Select Quantity ");
 		System.out.println(" ================================================== ");
-	
 		System.out.println(" 2) select quantity ");
+		
+		String userInputQuantity = in.nextLine();
+		int userInputQuantityAsInt = Integer.parseInt(userInputQuantity);
+	
+		removeItem(userInputQuantityAsInt);  //Need to Instantiate
+		addItemToCart(newMapofItems.getValue(userInputSelection)); //in Cart class
+		
+		
+		System.out.print("Your item was added to your cart. Make another selection");
+		//System.out.println("This works. Its a miracle.");
+		}
+			
+		return mainMenuDispay();
+//			/*
+//			 * 1. Select productcode
+//			 * 2.select quantity
+//			 * 3. Add to cart
+//			 * 4. subtract from itemquantity(TemporaryCart)
+//			 */
+//			
+//			//return placeOrderQuantity();
+//			//System.out.println("Make a new selection");
+//			//return in.nextLine();
+//		} System.out.println( "Doesnt work, obvi");
+		return "";
+	}
+		
 		
 		return in.nextLine();
 	}

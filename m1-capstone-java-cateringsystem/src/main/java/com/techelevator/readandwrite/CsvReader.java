@@ -47,29 +47,60 @@ public class CsvReader   {
 		
 		public List<String> getItemsFromFile() {
 		
-		try {
-		
-		File myObj = new File ("cateringsystem.csv");
-		Scanner myReader = new Scanner(myObj);
-		while (myReader.hasNextLine()) {
-			String data = myReader.nextLine();
-			System.out.println(data);
-			listOfLines.add(data);
-			System.out.println(data);
+			try {
+			
+			File myObj = new File ("cateringsystem.csv");
+			Scanner myReader = new Scanner(myObj);
+			while (myReader.hasNextLine()) {
+				String data = myReader.nextLine();
+				//System.out.println(data);
+				listOfLines.add(data);
+				//System.out.println(data);
+			}
+			
+			
+			
+			myReader.close();
+		} catch (FileNotFoundException e) {
+			System.out.println("An error occured");
+			e.printStackTrace();
+			
 		}
-		
-		
-		
-		myReader.close();
-	} catch (FileNotFoundException e) {
-		System.out.println("An error occured");
-		e.printStackTrace();
-		
-	}
-
-		return listOfLines;
-		
-	}
+	
+//			for (String line : listOfLines) {
+//				System.out.println(line);
+//			}
+			return listOfLines;
+			
+		}
+		public List<String> getItemsFromFilePrint() {
+			
+			try {
+			
+			File myObj = new File ("cateringsystem.csv");
+			Scanner myReader = new Scanner(myObj);
+			while (myReader.hasNextLine()) {
+				String data = myReader.nextLine();
+				System.out.println(data);
+				//listOfLines.add(data);
+				//System.out.println(data);
+			}
+			
+			
+			
+			myReader.close();
+		} catch (FileNotFoundException e) {
+			System.out.println("An error occured");
+			e.printStackTrace();
+			
+		}
+	
+//			for (String line : listOfLines) {
+//				System.out.println(line);
+//			}
+			return listOfLines;
+			
+		}
 
 		
 	}
