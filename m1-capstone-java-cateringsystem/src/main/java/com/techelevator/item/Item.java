@@ -45,16 +45,16 @@ public class Item {
 	
 	public void returnItem (int numberOfItems) {
 		
-	if (itemQuantity == 0 ){
-		System.out.println("Sold Out.");
-	
-	}
+//	if (itemQuantity == 0 ){
+//		System.out.println("Sold Out.");
+//	
+//	}
 		itemQuantity+=numberOfItems;
 	
 	}
 	
 	
-	public void removeItem (int numberOfItems) {
+	public void addItem (int numberOfItems) {
 		
 	if (itemQuantity == 0 ){
 		System.out.println("Sold Out.");
