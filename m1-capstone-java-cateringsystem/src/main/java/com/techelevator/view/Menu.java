@@ -18,8 +18,10 @@ public class Menu {
 	
 	private  final Scanner in = new Scanner(System.in);
 	private CsvReader csvreader;
-	private ObjectConverter objectConverter;
+	//private ObjectConverter objectConverter;
 	private
+	
+	ObjectConverter objectConverter = new ObjectConverter();
 	
 	String userInput = "";
 	
@@ -66,8 +68,9 @@ public class Menu {
 		System.out.println(" 1) Make a selection ");
 		
 		//If the list contains the user selection 
-		InputStream x =System.in ;
-		if (objectConverter.itemKeyName.containsKey(in.nextLine())) {
+		//InputStream x =System.in ;
+		String userInputSelection = in.nextLine();
+		if (objectConverter.itemKeyName.containsKey(userInputSelection)) {
 			System.out.println("Yes");
 			/*
 			 * 1. Select productcode
