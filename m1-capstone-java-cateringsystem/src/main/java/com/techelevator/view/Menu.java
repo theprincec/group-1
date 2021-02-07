@@ -61,7 +61,7 @@ public class Menu {
 		String userChoice = in.nextLine();
 //		
 		 if (userChoice.equals("1")); {
-			 askForUserDeposit(); //************
+			// askForUserDeposit(); //************
 		 }
 		 if (userChoice.equals("2")) {
 		return placeOrderSelection();	
