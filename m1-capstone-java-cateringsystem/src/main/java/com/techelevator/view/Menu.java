@@ -58,19 +58,22 @@ public class Menu {
 		System.out.println(" Your Account Balance is $" + userAccount.getAccountBalance()) ;   
 			
 		
-		String userChoice = in.nextLine();
+		//String userChoice = in.nextLine();
+		
+		//if (userChoice.equals("1")) {
+		//	return askForUserDeposit();
+		//}
+		
 //		
-		 if (userChoice.equals("1")); {
-			 askForUserDeposit(); //************
-		 }
-		 if (userChoice.equals("2")) {
-		return placeOrderSelection();	
-		} else {
-		//else if(mainMenuOrderSelection.matches("3"))  {
-	//		
-
+//		 if (userChoice.equals("1")); {
+//			return askForUserDeposit(); //************
+//		 } 
+//		 if (userChoice.equals("2")) {
+//			 placeOrderSelection();	
+//		} 
+		 
 		return "";
-	}
+	//}
 		
 	}
 	
@@ -96,9 +99,10 @@ public class Menu {
 			return placeOrderQuantity();
 			
 		} else {
-			System.out.println("This Is not a valid selection. Please select another item");
+			//System.out.println("This Is not a valid selection. Please select another item");
 			return placeOrderSelection();
 		}
+		
 		
 		
 
@@ -137,7 +141,7 @@ public class Menu {
 
 	}
 	
-	public String askForUserDeposit (UserAccount userAccount) {
+	public String askForUserDeposit () {
 		//double depoist = userAccount.addMoneyToAccount(0)
 		
 		String userDeposit = in.nextLine();
