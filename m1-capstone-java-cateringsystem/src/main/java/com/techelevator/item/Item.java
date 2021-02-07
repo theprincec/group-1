@@ -58,30 +58,25 @@ public class Item {
 
 	
 	
-	public int removeItem (int numberOfItems) {
-
-//	if (itemQuantity == 0 ){
-//		System.out.println("Sold Out.");
+//	public int removeItem (int numberOfItems) {
+//
+//		return itemQuantity+=numberOfItems;
 //	
 //	}
-		return itemQuantity+=numberOfItems;
-	
-	}
-	
+//	
 	
 	public String addItem (int numberOfItems) {
 
+		if (itemQuantity == 0 ){
+			System.out.println("Sold Out.");
 		
-	if (itemQuantity == 0 ){
-		System.out.println("Sold Out.");
-	
-		} else if (itemQuantity - numberOfItems >= 0) {
-		itemQuantity-=numberOfItems;
-		} else if (itemQuantity - numberOfItems < 0) {
-		System.out.println("only " + itemQuantity + " left");
-		}
-			return "";
-	} 
+			} else if (itemQuantity - numberOfItems >= 0) {
+			itemQuantity-=numberOfItems;
+			} else if (itemQuantity - numberOfItems < 0) {
+			System.out.println("only " + itemQuantity + " left");
+			}
+				return "";
+		} 
 	
 	
 	

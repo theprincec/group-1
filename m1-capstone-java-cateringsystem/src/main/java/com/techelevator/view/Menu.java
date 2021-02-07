@@ -11,6 +11,7 @@ import com.techelevator.item.Dessert;
 import com.techelevator.item.Entree;
 import com.techelevator.item.Item;
 import com.techelevator.readandwrite.*;
+import com.techelevator.transaction.FinalCart;
 import com.techelevator.transaction.UserAccount;
 
 
@@ -29,6 +30,7 @@ public class Menu {
 	//CsvReader csvReader = new CsvReader();
 	//String userInput = "";
 	UserAccount userAccount = new UserAccount(0);
+	FinalCart finalCart = new FinalCart();
 	//Item item = new Item()
 	
 	
@@ -63,29 +65,33 @@ public class Menu {
 		System.out.println(" 1) Add Funds ");
 		System.out.println(" 2) Make a selection ");
 		System.out.println(" 3) Checkout ");
-		System.out.println(" Your Account Balance is" ;   //************
+		System.out.println(" Your Account Balance is") ;   //************
 			
 		//System.out.println(" 2) select quantity ");
 		
 		//System.out.println(" 3) add items to cart");
 		
 		String userChoice = in.nextLine();
-		
-		if (mainMenuOrderSelection.matches("1")) {
-			// accesses the account to add money
-			
-		} else if (mainMenuOrderSelection.matches("2")) {
-			
-			//sfs
-		} else if(mainMenuOrderSelection.matches("3"))  {
-			
-		}
+//		
+//		if (mainMenuOrderSelection.matches("1")) {
+//			// accesses the account to add money
+//			
+//		} else if (mainMenuOrderSelection.matches("2")) {
+//			
+//			//sfs
+//		} else if(mainMenuOrderSelection.matches("3"))  {
+//			
+//		}
 		return in.nextLine();
 	}
 		
 	
 	String userInputSelection = "";
 	userInputSelection = in.nextLine();
+	
+	Map<String, Item> newMapofItems = new LinkedHashMap<String, Item>();
+	newMapofItems = objectConverter.mapMaker();
+	
 	
 	public String placeOrderSelection() {
 		System.out.println(" Order ");
@@ -95,8 +101,8 @@ public class Menu {
 		
 		//String userInputSelection = in.nextLine();  *added outside of scope*
 		
-		Map<String, Item> newMapofItems = new LinkedHashMap<String, Item>();
-		newMapofItems = objectConverter.mapMaker();
+		//Map<String, Item> newMapofItems = new LinkedHashMap<String, Item>();
+		//newMapofItems = objectConverter.mapMaker();
 		
 		
 		if (newMapofItems.containsKey(userInputSelection)) {
@@ -114,11 +120,6 @@ public class Menu {
 							//			 * 3. Add to cart
 							//			 * 4. subtract from itemquantity(TemporaryCart)
 							//			 */
-							//			
-							//			//return placeOrderQuantity();
-							//			//System.out.println("Make a new selection");
-							//			//return in.nextLine();
-							//		} System.out.println( "Doesnt work, obvi");
 
 	public String placeOrderQuantity() {
 		//String userInputQuantity = "";
@@ -130,8 +131,8 @@ public class Menu {
 		int userInputQuantityAsInt = 0;
 		userInputQuantityAsInt = Integer.parseInt(userInputQuantity);
 	
-		cartList(userInputSelection).addItem(newMapOfItems.getValue(userInputSelection));  //Need to Instantiate
-		addItemToCart(newMapofItems.getValue(userInputSelection)); //in Cart class
+		FinalCart.addItem(newMapOfItems.getValue(userInputSelection), userInputQuantityAsInt );  //Need to Instantiate
+		//addItemToCart(newMapofItems.getValue(userInputSelection)); //in Cart class
 		
 		
 		System.out.print("Your item was added to your cart. Make another selection");
@@ -151,6 +152,16 @@ public class Menu {
 //			//return in.nextLine();
 //		} System.out.println( "Doesnt work, obvi");
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 		
 		
@@ -199,13 +210,3 @@ public class Menu {
 	}
 	
 	}	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
