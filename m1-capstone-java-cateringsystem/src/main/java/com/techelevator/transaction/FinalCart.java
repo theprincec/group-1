@@ -4,6 +4,8 @@ import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
+
 import com.techelevator.item.*;
 import com.techelevator.readandwrite.*;
 import com.techelevator.item.Item;
@@ -11,6 +13,7 @@ import com.techelevator.item.Item;
 
 public  class FinalCart {
 	
+	private double cartTotal = 0;
 	private Map<Item, Integer> cartMap = new LinkedHashMap<Item, Integer>();
 	private int itemQuantity;
 	//private Map<String, Item> itemKeyName; 
@@ -27,15 +30,13 @@ public  class FinalCart {
 		return itemQuantity;
 	}
 
-//	public Map<Item, Integer> addToCart ( int itemQuantity, String productCode) {
-//		//cartList = map of object, and quantity
-//		cartList.put(getItem(),itemQuantity );
-//		return cartList;
-//		
+//	public double getCartTotal() {
+//		return cartTotal;
 //	}
 
 	public  Map<Item, Integer> addItem (Item item, int numberOfItems) {
 
+		//Adds to cart
 		if (item.getItemQuantity() == 0 ){
 			System.out.println("Sold Out.");
 		
@@ -45,34 +46,35 @@ public  class FinalCart {
 			} else if (item.getItemQuantity()  - numberOfItems < 0) {
 			System.out.println("There are only " + item.getItemQuantity()  + " left");
 			}
-				return cartMap;
+		return cartMap;
 		} 
 	
 	
 	
-//public void addItem(Item item, int quantity) {
-//		
-//		if (item == null || quantity < 1 ) {
-//			return;
-//		}
-//		
-//		if (cartMap.containsKey(item)) {
-//			
-//			cartMap.replace(item, cartMap.get(item) + quantity);
-//			
-//		} else {
-//			
-//			cartMap.put(item, quantity);
-//			
-//		}
-//	
 	
 	
+//	for (Entry<String, String> entry : animalNoises.entrySet()) {
+//		System.out.println("Key: " + entry.getKey());
+//		System.out.println("Value: " + entry.getValue() );
+//	}
+	
+	
+	
+	public double getCartTotal() {
+	
+		for (Entry<Item, Integer> entry : cartMap.entrySet()) {
+			//costForItem is the cost of the individual item * the quantity of the item
+			double costForItem= entry.getKey().getPrice()*entry.getValue();
+			cartTotal += costForItem;
+		}
+		return cartTotal;
+	}
+
 	
 	
 	//ONCE WE ADD ABOVE METHODS RETURN MODIFIED CARTMAP
-	public Map<Item, Integer> getCart(){
-		return this.cartMap;
-	}
+//	public Map<Item, Integer> getCart(){
+//		return this.cartMap;
+//	}
 	
 }

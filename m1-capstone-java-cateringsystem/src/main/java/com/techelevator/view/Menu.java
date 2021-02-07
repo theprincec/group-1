@@ -98,11 +98,11 @@ public class Menu {
 			System.out.println("This works. its a miracle.");	
 			return placeOrderQuantity();
 			
-		} else {
-			//System.out.println("This Is not a valid selection. Please select another item");
-			return placeOrderSelection();
-		}
-		
+		} //else {
+//			//System.out.println("This Is not a valid selection. Please select another item");
+//			return placeOrderSelection();
+		//}
+		return "";
 		
 		
 

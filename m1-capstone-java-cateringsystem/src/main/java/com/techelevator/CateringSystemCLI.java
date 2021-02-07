@@ -80,12 +80,7 @@ public class CateringSystemCLI {
 				
 				
 				
-//				if (choice.equals("1")); {
-//					
-//					System.out.println("into the deposit");
-//					choice = menu.askForUserDeposit();
-//					
-//					}
+				
 				if (choice.equals("2")); {
 					
 					System.out.println("into the order selection");
