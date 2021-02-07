@@ -100,30 +100,18 @@ public class Menu {
 		System.out.println(" Order ");
 		System.out.println(" ================================================== ");
 		System.out.println(" 1) Make a selection ");
-		
-		
-		//String userInputSelection = in.nextLine();  *added outside of scope*
-		
-		//Map<String, Item> newMapofItems = new LinkedHashMap<String, Item>();
-		//newMapofItems = objectConverter.mapMaker();
-		
-		
+	
 		if (newMapofItems.containsKey(userInputSelection)) {
 			String checkedUserInputSelection = userInputSelection;
+			
+			
 			return placeOrderQuantity();
 			
 		} System.out.println("This works. its a miracle.");
 			return "This Is not a valid selection. Please select another item";
-			
 	}
 
-			//			/*
-							//			 * 1. Select productcode
-							//			 * 2.select quantity
-							//			 * 3. Add to cart
-							//			 * 4. subtract from itemquantity(TemporaryCart)
-							//			 */
-
+		
 	public String placeOrderQuantity() {
 		//String userInputQuantity = "";
 		
