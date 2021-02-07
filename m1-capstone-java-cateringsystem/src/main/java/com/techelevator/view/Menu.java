@@ -67,23 +67,14 @@ public class Menu {
 		System.out.println(" 2) Make a selection ");
 		System.out.println(" 3) Checkout ");
 		System.out.println(" Your Account Balance is") ;   //************
-			
-		//System.out.println(" 2) select quantity ");
-		
-		//System.out.println(" 3) add items to cart");
-		
+
 		String userChoice = in.nextLine();
-//		
-//		if (mainMenuOrderSelection.matches("1")) {
-//			// accesses the account to add money
-//			
+
 		 if (userChoice.equals("2")) {
 		return placeOrderSelection();
 			//sfs
 		} 
-		//else if(mainMenuOrderSelection.matches("3"))  {
-	//		
-	//}
+
 		return "";
 	}
 		
@@ -104,12 +95,14 @@ public class Menu {
 		if (newMapofItems.containsKey(userInputSelection)) {
 			String checkedUserInputSelection = userInputSelection;
 			
-			
+			System.out.println("This works. its a miracle.");
 			return placeOrderQuantity();
 			
-		} System.out.println("This works. its a miracle.");
+		} else {
 			return "This Is not a valid selection. Please select another item";
 	}
+		}
+	
 
 		
 	public String placeOrderQuantity() {
