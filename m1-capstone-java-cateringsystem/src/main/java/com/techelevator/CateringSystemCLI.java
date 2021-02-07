@@ -75,22 +75,20 @@ public class CateringSystemCLI {
 				}
 
 			if (choice.equals("2") ) {
-				//System.out.println("does work");
-				//choice = menu.placeOrder();
-				
+			
 				choice = menu.placeOrder();
-				if (choice.equals(menu.placeOrderSelection())); {
-					
+				
+			if (choice.equals("2")); {
+				choice = menu.placeOrderSelection();
 				}
-				//if ( 1 = 1) {
-				//	System.out.println(menu.placeOrderQuantity());
-			}
-
-			if (choice.equals("3"));
+		
+			if (choice.equals("3")); {
 				System.out.println();
 				System.out.println("Thanks for Shopping");
 				break;
 				}
+			}
+		}
 	}
 		
 	
