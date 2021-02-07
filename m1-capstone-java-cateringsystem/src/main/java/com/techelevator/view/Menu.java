@@ -60,7 +60,7 @@ public class Menu {
 		String userChoice = in.nextLine();
 //		
 		 if (userChoice.equals("1")); {
-			 return askForUserDeposit();
+			 askForUserDeposit(); //************
 		 }
 		 if (userChoice.equals("2")) {
 		return placeOrderSelection();	
@@ -131,16 +131,26 @@ public class Menu {
 
 	}
 	
-	public double askForUserDeposit (UserAccount userAccount) {
+	public String askForUserDeposit (UserAccount userAccount) {
 		//double depoist = userAccount.addMoneyToAccount(0)
+		
+		String userDeposit = in.nextLine();
+		Double deposit = Double.valueOf(userDeposit);
+		
+		if (deposit + userAccount.getAccountBalance() > 5000) {
+			System.out.println("Account balance cannot exceed $5000");
+		} else {
+			userAccount.addMoneyToAccount(deposit);
+		}
+		
 		
 		System.out.println("Make a deposit");
 		System.out.println("==============================");
 		System.out.println("Enter amount of $ to add");
 		
 		//if()
-		
-		return 0.0;
+		System.out.println("Thanks for your deposit!");
+		return placeOrder();
 		
 	}
 	

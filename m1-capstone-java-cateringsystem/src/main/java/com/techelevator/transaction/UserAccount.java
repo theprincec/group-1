@@ -14,9 +14,9 @@ public class UserAccount {
 		this.accountBalance = 0;
 	}
 	
-	public String addMoneyToAccount(double money) {
-		if (accountBalance + money <=5000) {
-			accountBalance += money;
+	public String addMoneyToAccount(double userAmount) {
+		if (accountBalance + userAmount <=5000) {
+			accountBalance += userAmount;
 		} else {
 			System.out.println("Your account balance cannot be more than $5000. Please add less money") ;
 		}
