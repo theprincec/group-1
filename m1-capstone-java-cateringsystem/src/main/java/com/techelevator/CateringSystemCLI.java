@@ -75,9 +75,9 @@ public class CateringSystemCLI {
 				}
 
 			if (choice.equals("2") ) {
+
 				System.out.println("into the order menu");
-				choice = menu.placeOrder();
-				
+
 				
 				
 				

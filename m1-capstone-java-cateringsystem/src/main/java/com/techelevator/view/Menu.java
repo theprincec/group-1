@@ -55,7 +55,8 @@ public class Menu {
 		System.out.println(" 2) Make a selection ");
 		System.out.println(" 3) Checkout ");
 
-		System.out.println(" Your Account Balance is $" + userAccount.getAccountBalance()) ;   
+		System.out.println(" Your Account Balance is $" + userAccount.getAccountBalance()) ;
+		return "";   
 			
 		
 		//String userChoice = in.nextLine();
@@ -63,18 +64,17 @@ public class Menu {
 		//if (userChoice.equals("1")) {
 		//	return askForUserDeposit();
 		//}
-		
-//		
-//		 if (userChoice.equals("1")); {
-//			return askForUserDeposit(); //************
-//		 } 
-//		 if (userChoice.equals("2")) {
-//			 placeOrderSelection();	
-//		} 
-		 
-		return "";
-	//}
-		
+	
+
+	//	 if (userChoice.equals("1")); {
+			// askForUserDeposit(); //************
+		// }
+		 //if (userChoice.equals("2")) {
+		//return placeOrderSelection();	
+		//} else {
+		//else if(mainMenuOrderSelection.matches("3"))  {
+
+		//return "";
 	}
 	
 	
