@@ -43,29 +43,18 @@ public class Menu {
 		System.out.println(" 2) Order " );
 		System.out.println(" 3) Quit " );
 		return in.nextLine();
-		
 	}
-	/*
-	public String mainMenuDispay1() {
 
-		System.out.println( "Do you want to order? ");
-		System.out.println(" ================================================= ");		
-		
-		System.out.println(" 2) Order " );
-		System.out.println(" 3) Quit " );
-		return in.nextLine();
-		
-	}
-		
-		*/
 		
 	public String placeOrder() {
 	
 		System.out.println(" Order ");
 		System.out.println(" ================================================== ");
 		System.out.println(" 1) Add Funds ");
+		
 		System.out.println(" 2) Make a selection ");
 		System.out.println(" 3) Checkout ");
+<<<<<<< HEAD
 		System.out.println(" Your Account Balance is") ;   //************
 
 		String userChoice = in.nextLine();
@@ -75,9 +64,26 @@ public class Menu {
 			//sfs
 		} 
 
+=======
+		System.out.println(" Your Account Balance is $" + userAccount.getAccountBalance()) ;   
+			
+		
+		String userChoice = in.nextLine();
+//		
+		 if (userChoice.equals("1")); {
+			 return askForUserDeposit();
+		 }
+		 if (userChoice.equals("2")) {
+		return placeOrderSelection();	
+		} else {
+		//else if(mainMenuOrderSelection.matches("3"))  {
+	//		
+>>>>>>> 5c4d95fcb1af16b8fdff6047162a2eedabb3eed3
 		return "";
 	}
 		
+	}
+	
 	
 	public String placeOrderSelection() {
 		
@@ -95,11 +101,23 @@ public class Menu {
 		if (newMapofItems.containsKey(userInputSelection)) {
 			String checkedUserInputSelection = userInputSelection;
 			
+<<<<<<< HEAD
 			System.out.println("This works. its a miracle.");
 			return placeOrderQuantity();
 			
 		} else {
 			return "This Is not a valid selection. Please select another item";
+=======
+			System.out.println("This works. its a miracle.");	
+			return placeOrderQuantity();
+			
+		} else {
+			System.out.println("This Is not a valid selection. Please select another item");
+			return placeOrderSelection();
+		}
+		
+		
+>>>>>>> 5c4d95fcb1af16b8fdff6047162a2eedabb3eed3
 	}
 		}
 	
@@ -125,33 +143,28 @@ public class Menu {
 		String userInputQuantity = in.nextLine();
 		int userInputQuantityAsInt = 0;
 		userInputQuantityAsInt = Integer.parseInt(userInputQuantity);
-		//Item useritem = new Item(null, null, null);
 		
-		//***************************************************************
-		
-		finalCart.addItem(newMapofItems.get(userInputSelection), userInputQuantityAsInt );  //Need to Instantiate
-		//addItemToCart(newMapofItems.getValue(userInputSelection)); //in Cart class
-		
+		finalCart.addItem(newMapofItems.get(userInputSelection), userInputQuantityAsInt );
 		
 		System.out.print("Your item was added to your cart. Make another selection");
-		//System.out.println("This works. Its a miracle.");
-		
+		System.out.println();
 			
-		return placeOrderSelection();
-//			/*
-//			 * 1. Select productcode
-//			 * 2.select quantity
-//			 * 3. Add to cart
-//			 * 4. subtract from itemquantity(TemporaryCart)
-//			 */
-//			
-//			//return placeOrderQuantity();
-//			//System.out.println("Make a new selection");
-//			//return in.nextLine();
-//		} System.out.println( "Doesnt work, obvi");
+		return placeOrder();
+
 	}
 	
-	
+	public double askForUserDeposit (UserAccount userAccount) {
+		//double depoist = userAccount.addMoneyToAccount(0)
+		
+		System.out.println("Make a deposit");
+		System.out.println("==============================");
+		System.out.println("Enter amount of $ to add");
+		
+		//if()
+		
+		return 0.0;
+		
+	}
 	
 	
 	
