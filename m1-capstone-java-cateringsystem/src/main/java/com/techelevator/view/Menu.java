@@ -1,7 +1,6 @@
 
 package com.techelevator.view;
 
-import java.io.InputStream;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -14,7 +13,6 @@ import com.techelevator.item.Item;
 import com.techelevator.readandwrite.*;
 import com.techelevator.transaction.FinalCart;
 import com.techelevator.transaction.UserAccount;
-import com.techelevator.*;
 
 
 /*
@@ -22,17 +20,17 @@ import com.techelevator.*;
  */
 public class Menu {
 	
-	private  final Scanner in = new Scanner(System.in);
 
-	//private ObjectConverter objectConverter;
-	private
+
+	private  Scanner in = new Scanner(System.in);
+
 	
 	ObjectConverter objectConverter = new ObjectConverter();
-	//CsvReader csvReader = new CsvReader();
-	//String userInput = "";
+	CsvReader csvReader = new CsvReader();
+	
 	UserAccount userAccount = new UserAccount(0);
 	FinalCart finalCart = new FinalCart();
-	Item item = new Item(null, null, null);
+	Item item = new Item("","",0.0,50);
 	
 	
 	public String mainMenuDispay() {
@@ -46,136 +44,97 @@ public class Menu {
 	}
 
 		
-	public String placeOrder() {
+	public String placeOrderScreen() {
 	
 		System.out.println(" Order ");
 		System.out.println(" ================================================== ");
 		System.out.println(" 1) Add Funds ");
-		
 		System.out.println(" 2) Make a selection ");
 		System.out.println(" 3) Checkout ");
-
 		System.out.println(" Your Account Balance is $" + userAccount.getAccountBalance()) ;
-		return "";   
-			
-		
-		//String userChoice = in.nextLine();
-		
-		//if (userChoice.equals("1")) {
-		//	return askForUserDeposit();
-		//}
 	
-
-	//	 if (userChoice.equals("1")); {
-			// askForUserDeposit(); //************
-		// }
-		 //if (userChoice.equals("2")) {
-		//return placeOrderSelection();	
-		//} else {
-		//else if(mainMenuOrderSelection.matches("3"))  {
-
-		//return "";
+		String userChoice = in.nextLine();
+		
+		if (userChoice.equals("1")) {
+			 askForUserDeposit();
+		}
+		else if (userChoice.equals("2")) {
+			 placeOrderSelection();	
+		}
+		else if (userChoice.equals("3")) {
+			//return "";//checkout.checkoutmethod;
+		} return mainMenuDispay();
 	}
 	
 	
 	public String placeOrderSelection() {
-		
-		//ERROR SOLUTION
-		String userInputSelection = ""; 
-		userInputSelection = in.nextLine();
-		Map<String, Item> newMapofItems = new LinkedHashMap<String, Item>();
-		newMapofItems = objectConverter.mapMaker();
-		
-		
 		System.out.println(" Order ");
 		System.out.println(" ================================================== ");
 		System.out.println(" 1) Make a selection ");
-	
-		if (newMapofItems.containsKey(userInputSelection)) {
-			String checkedUserInputSelection = userInputSelection;
-			
+		
+		String userInput = in.nextLine();
+		Map<String, Item> newMapofItems = new LinkedHashMap<String, Item>();
+		newMapofItems = objectConverter.mapMaker();
 
-			System.out.println("This works. its a miracle.");	
+		if (newMapofItems.containsKey(userInput)) {
 			return placeOrderQuantity();
 			
-		} else {
-			//System.out.println("This Is not a valid selection. Please select another item");
+		}  
+			System.out.println("This Is not a valid selection. Please select another item");
 			return placeOrderSelection();
-		}
-		
-		
-		
-
+				
 	}
 		
+		
+		
+
+	
+		
 	
 
 		
-	public String placeOrderQuantity() {
-		//String userInputQuantity = "";
-		
-		
-		//ERROR SOLUTION
-		String userInputSelection = ""; 
-		userInputSelection = in.nextLine();
-	
-		//Map<String, Item> newMapofItems = new LinkedHashMap<String, Item>();
-		Map <String,Item>newMapofItems = objectConverter.mapMaker();
-
-		//Item userItem = newMapofItems.;
-		
-		System.out.println(" Select Quantity ");
+	public String placeOrderQuantity(){
 		System.out.println(" ================================================== ");
 		System.out.println(" 2) select quantity ");
 		
-		String userInputQuantity = in.nextLine();
+		String userInput = in.nextLine();
+		Map <String,Item>newMapofItems = objectConverter.mapMaker();
 		int userInputQuantityAsInt = 0;
-		userInputQuantityAsInt = Integer.parseInt(userInputQuantity);
+		userInputQuantityAsInt = Integer.parseInt(userInput);
 		
-		finalCart.addItem(newMapofItems.get(userInputSelection), userInputQuantityAsInt );
 		
-		System.out.print("Your item was added to your cart. Make another selection");
-		System.out.println();
-			
-		return placeOrder();
-
+	
+		
+		if(userInputQuantityAsInt <= item.getItemQuantity()) {
+			finalCart.addItem(newMapofItems.get(userInput) , userInputQuantityAsInt); //Throws Number Format Exception
+			System.out.print("Your item was added to your cart. Make another selection");
+			System.out.println();
+		} 
+		if (userInputQuantityAsInt > item.getItemQuantity()) {
+			System.out.println("Sorry only" + item.getItemQuantity() + "left! Please select again");
+		
+		} return placeOrderSelection();
 	}
 	
 	public String askForUserDeposit () {
-		//double depoist = userAccount.addMoneyToAccount(0)
 		
-		String userDeposit = in.nextLine();
-		Double deposit = Double.valueOf(userDeposit);
-		
-		if (deposit + userAccount.getAccountBalance() > 5000) {
-			System.out.println("Account balance cannot exceed $5000");
-		} else {
-			userAccount.addMoneyToAccount(deposit);
-		}
-		
-		
+
 		System.out.println("Make a deposit");
 		System.out.println("==============================");
 		System.out.println("Enter amount of $ to add");
 		
-		//if()
-		System.out.println("Thanks for your deposit!");
-		return placeOrder();
+		String userDeposit = in.nextLine();
+		Double deposit = Double.valueOf(userDeposit);
+			
 		
+			if (deposit + userAccount.getAccountBalance() > 5000) {
+				System.out.println("Account balance cannot exceed $5000");
+			} if(deposit + userAccount.getAccountBalance() < 5000) {
+				userAccount.addMoneyToAccount(deposit);
+				System.out.println("Thanks for your deposit!");
+			} return placeOrderScreen();
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-		
-		
-		//return in.nextLine();
-	//}
+
 		
 	private String checkItemType(Item item) {
 		if (item instanceof Appetizer) {
@@ -210,7 +169,6 @@ public class Menu {
 				choice = options[selectedOption - 1];
 			}
 		} catch(NumberFormatException e) {
-			// eat the exception, an error message will be displayed below since choice will be null
 		}
 		if(choice == null) {
 			System.out.println("\n*** "+userInput+" is not a valid option ***\n");

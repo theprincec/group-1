@@ -4,25 +4,28 @@ import java.util.List;
 
 public class Item {
 	
-	private String productName;
-	private Double price;
+	public String productName;
+	public Double price;
 
-	private String productCode;
-	private int itemQuantity;
+	public String productCode;
+	public int itemQuantity = 50;
 	
 	
 
-	public Item( String productCode,String name, Double price) {
+	public Item( String productCode,String name, Double price, int itemQuantity) {
 
 		
 		this.productName = name;
 		this.price = price;
 		this.productCode = productCode;
-		this.itemQuantity =50;
+		this.itemQuantity =itemQuantity;
 	}
 
 
 	
+
+
+
 	public String getProductName() {
 		return productName;
 	}
@@ -47,6 +50,7 @@ public class Item {
 	
 	
 	
+	/*
 	public int returnItem (int numberOfItems) {
 		
 
@@ -55,16 +59,8 @@ public class Item {
 		}
 		return itemQuantity+=numberOfItems;
 		}
+*/
 
-	
-	
-//	public int removeItem (int numberOfItems) {
-//
-//		return itemQuantity+=numberOfItems;
-//	
-//	}
-//	
-	
 	public String addItem (int numberOfItems) {
 
 		if (itemQuantity == 0 ){
@@ -73,7 +69,7 @@ public class Item {
 			} else if (itemQuantity - numberOfItems >= 0) {
 			itemQuantity-=numberOfItems;
 			} else if (itemQuantity - numberOfItems < 0) {
-			System.out.println("only " + itemQuantity + " left");
+			System.out.println(" only " + itemQuantity + " left ");
 			}
 				return "";
 		} 

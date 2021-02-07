@@ -12,8 +12,10 @@ import com.techelevator.item.Item;
 public  class FinalCart {
 	
 	private Map<Item, Integer> cartMap = new LinkedHashMap<Item, Integer>();
-	private int itemQuantity;
+	//private int itemQuantity = 50;
+	//private Item item = (null);
 	//private Map<String, Item> itemKeyName; 
+	//Item item = new Item("","",0.0,50);
 	
 	
 
@@ -23,9 +25,6 @@ public  class FinalCart {
 	
 	
 	
-	public int getItemQuantity() {
-		return itemQuantity;
-	}
 
 //	public Map<Item, Integer> addToCart ( int itemQuantity, String productCode) {
 //		//cartList = map of object, and quantity
@@ -35,19 +34,18 @@ public  class FinalCart {
 //	}
 
 	public  Map<Item, Integer> addItem (Item item, int numberOfItems) {
-
-		if (item.getItemQuantity() == 0 ){
+	
+		if (itemQuantity == 0 ){
 			System.out.println("Sold Out.");
 		
-			} else if (item.getItemQuantity()  - numberOfItems >= 0) {
-				cartMap.put( item, numberOfItems ); 
-				itemQuantity-=numberOfItems;
-			} else if (item.getItemQuantity()  - numberOfItems < 0) {
-			System.out.println("There are only " + item.getItemQuantity()  + " left");
+			} else if (itemQuantity  - numberOfItems >= 0) {
+				cartMap.put(item, itemQuantity ); 
+				itemQuantity -=numberOfItems;
+			} else if (itemQuantity  - numberOfItems < 0) {
+			System.out.println("There are only " + itemQuantity  + " left");
 			}
 				return cartMap;
 		} 
-	
 	
 	
 //public void addItem(Item item, int quantity) {
@@ -66,7 +64,6 @@ public  class FinalCart {
 //			
 //		}
 //	
-	
 	
 	
 	

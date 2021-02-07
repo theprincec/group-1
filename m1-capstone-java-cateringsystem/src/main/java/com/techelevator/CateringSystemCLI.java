@@ -61,51 +61,62 @@ public class CateringSystemCLI {
 				THEN go to the purchase menu
 			*/
 				
+			  String choice = menu.mainMenuDispay();
+
+	            if (choice.equals("1")) {
+	                csvreader.getItemsFromFilePrint(); 
+	                System.out.println(); 
+	            }
+	            
+	             else if (choice.equals("2")) {
+	                menu.placeOrderScreen();
+	                
+	            }   
+	            
+	            else if (choice.equals("3")); {
+	                System.out.println();
+	                System.out.println("Thanks for Shopping");
+	                break;  
+	            }
+		}
+		}
 			
 			
+			
+			/*
 
 			String choice = menu.mainMenuDispay();
 
 			if (choice.equals("1")) {
 				csvreader.getItemsFromFilePrint(); 
-
-				//choice = menu.placeOrder();
 				System.out.println();
-				choice = menu.mainMenuDispay();
+				choice = menu.mainMenuDispay();	
+			}
+			
+			 if (choice.equals("2") ) {
+				choice = menu.placeOrderScreen();
+				 if (choice.equals("1")); {
+					choice = menu.askForUserDeposit();	
 				}
-
-			if (choice.equals("2") ) {
-
-				System.out.println("into the order menu");
-
-				
-				
-//				if (choice.equals("1")); {
-//					
-//					System.out.println("into the deposit");
-//					choice = menu.askForUserDeposit();
-//					
-//					}
-				if (choice.equals("2")); {
-					
-					System.out.println("into the order selection");
-					menu.placeOrderSelection();
-					
+				 if (choice.equals("2")) {
+					choice = menu.placeOrderSelection();
+				}
+				else if (choice.equals("3")) {
+					choice = "";//menu.checkoutMenu
 				}
 			}	
-		
+			
 			if (choice.equals("3")); {
 				System.out.println();
 				System.out.println("Thanks for Shopping");
-				break;
-				
+				break;	
 			}
 		}
 	}
 		
 	
 		
-		
+		*/
 		
 		
 		

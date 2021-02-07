@@ -54,20 +54,20 @@ import com.techelevator.readandwrite.CsvReader;
 				
 				if (splitItem[3].equalsIgnoreCase("A")) {
 				
-					Item item = new Appetizer(splitItem[0], splitItem[1], price);
+					Item item = new Appetizer(splitItem[0], splitItem[1], price, 0);
 					itemKeyName.put(splitItem[0], item);
 					
 					
 				} if (splitItem[3].equalsIgnoreCase("B")) {
-					Item item = new Beverage(splitItem[0], splitItem[1], price);
+					Item item = new Beverage(splitItem[0], splitItem[1], price, 0);
 					itemKeyName.put(splitItem[0], item);
 				
 				} if (splitItem[3].equalsIgnoreCase("D")) {
-					Item item = new Dessert(splitItem[0], splitItem[1], price);
+					Item item = new Dessert(splitItem[0], splitItem[1], price, 0);
 					itemKeyName.put(splitItem[0], item);
 				
 				} if (splitItem[3].equalsIgnoreCase("E")) {
-					Item item = new Entree(splitItem[0], splitItem[1], price);
+					Item item = new Entree(splitItem[0], splitItem[1], price, 0);
 					itemKeyName.put(splitItem[0], item);
 				}
 					
