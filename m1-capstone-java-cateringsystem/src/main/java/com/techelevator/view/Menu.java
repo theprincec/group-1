@@ -1,5 +1,6 @@
 
 package com.techelevator.view;
+
 import java.io.InputStream;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -13,7 +14,7 @@ import com.techelevator.item.Item;
 import com.techelevator.readandwrite.*;
 import com.techelevator.transaction.FinalCart;
 import com.techelevator.transaction.UserAccount;
-
+import com.techelevator.*;
 
 
 /*
@@ -31,7 +32,7 @@ public class Menu {
 	//String userInput = "";
 	UserAccount userAccount = new UserAccount(0);
 	FinalCart finalCart = new FinalCart();
-	//Item item = new Item()
+	Item item = new Item(null, null, null);
 	
 	
 	public String mainMenuDispay() {
@@ -76,24 +77,26 @@ public class Menu {
 //		if (mainMenuOrderSelection.matches("1")) {
 //			// accesses the account to add money
 //			
-//		} else if (mainMenuOrderSelection.matches("2")) {
-//			
-//			//sfs
-//		} else if(mainMenuOrderSelection.matches("3"))  {
-//			
-//		}
-		return in.nextLine();
+		 if (userChoice.equals("2")) {
+		return placeOrderSelection();
+			//sfs
+		} 
+		//else if(mainMenuOrderSelection.matches("3"))  {
+	//		
+	//}
+		return "";
 	}
 		
 	
-	String userInputSelection = "";
-	userInputSelection = in.nextLine();
-	
-	Map<String, Item> newMapofItems = new LinkedHashMap<String, Item>();
-	newMapofItems = objectConverter.mapMaker();
-	
-	
 	public String placeOrderSelection() {
+		
+		//ERROR SOLUTION
+		String userInputSelection = ""; 
+		userInputSelection = in.nextLine();
+		Map<String, Item> newMapofItems = new LinkedHashMap<String, Item>();
+		newMapofItems = objectConverter.mapMaker();
+		
+		
 		System.out.println(" Order ");
 		System.out.println(" ================================================== ");
 		System.out.println(" 1) Make a selection ");
@@ -108,8 +111,8 @@ public class Menu {
 		if (newMapofItems.containsKey(userInputSelection)) {
 			String checkedUserInputSelection = userInputSelection;
 			return placeOrderQuantity();
-			System.out.println("This works. its a miracle.");
-		}
+			
+		} System.out.println("This works. its a miracle.");
 			return "This Is not a valid selection. Please select another item";
 			
 	}
@@ -123,6 +126,17 @@ public class Menu {
 
 	public String placeOrderQuantity() {
 		//String userInputQuantity = "";
+		
+		
+		//ERROR SOLUTION
+		String userInputSelection = ""; 
+		userInputSelection = in.nextLine();
+	
+		//Map<String, Item> newMapofItems = new LinkedHashMap<String, Item>();
+		Map <String,Item>newMapofItems = objectConverter.mapMaker();
+
+		//Item userItem = newMapofItems.;
+		
 		System.out.println(" Select Quantity ");
 		System.out.println(" ================================================== ");
 		System.out.println(" 2) select quantity ");
@@ -130,8 +144,11 @@ public class Menu {
 		String userInputQuantity = in.nextLine();
 		int userInputQuantityAsInt = 0;
 		userInputQuantityAsInt = Integer.parseInt(userInputQuantity);
-	
-		FinalCart.addItem(newMapOfItems.getValue(userInputSelection), userInputQuantityAsInt );  //Need to Instantiate
+		//Item useritem = new Item(null, null, null);
+		
+		//***************************************************************
+		
+		finalCart.addItem(newMapofItems.get(userInputSelection), userInputQuantityAsInt );  //Need to Instantiate
 		//addItemToCart(newMapofItems.getValue(userInputSelection)); //in Cart class
 		
 		

@@ -9,7 +9,7 @@ import com.techelevator.readandwrite.*;
 import com.techelevator.item.Item;
 
 
-public class FinalCart {
+public  class FinalCart {
 	
 	private Map<Item, Integer> cartMap = new LinkedHashMap<Item, Integer>();
 	private int itemQuantity;
@@ -34,7 +34,7 @@ public class FinalCart {
 //		
 //	}
 
-	public Map<Item, Integer> addItem (Item item, int numberOfItems) {
+	public  Map<Item, Integer> addItem (Item item, int numberOfItems) {
 
 		if (item.getItemQuantity() == 0 ){
 			System.out.println("Sold Out.");
