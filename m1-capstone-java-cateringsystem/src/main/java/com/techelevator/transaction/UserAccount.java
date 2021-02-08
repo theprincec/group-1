@@ -7,7 +7,7 @@ public class UserAccount {
 	
 	
 	public String getUserDeposit() {
-;		return addMoneyToAccount(accountBalance);
+	return addMoneyToAccount(accountBalance);
 	}
 	
 

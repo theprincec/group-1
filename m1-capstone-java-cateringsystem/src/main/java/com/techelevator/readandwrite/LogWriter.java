@@ -30,13 +30,29 @@ public class LogWriter {
 		      e.printStackTrace();
 		    }
 		  }
-	
-	  public void WriteToFile() {
+	  
+	  public void WriteDateAndTime() {
 
 		    try {
 		      FileWriter myWriter = new FileWriter("Log.txt");
 		      
-		      myWriter.write(getDateAndTime() + userAccount.getUserDeposit() + userAccount.getAccountBalance()); //CHECK IF getUSerDeposit IS CORRECTLY USED
+		      myWriter.write(getDateAndTime() ); //CHECK IF getUSerDeposit IS CORRECTLY USED
+		      myWriter.close();
+		      
+		      System.out.println("Successfully wrote to the file.");
+		    } catch (IOException e) {
+		      System.out.println("An error occurred.");
+		      e.printStackTrace();
+		    }
+		  }
+
+	  
+	  public void WriteItemAndQuantity() {
+
+		    try {
+		      FileWriter myWriter = new FileWriter("Log.txt");
+		      
+		      myWriter.write(/*Item and Quantity*/); //CHECK IF getUSerDeposit IS CORRECTLY USED
 		      myWriter.close();
 		      
 		      System.out.println("Successfully wrote to the file.");
@@ -46,6 +62,37 @@ public class LogWriter {
 		    }
 		  }
 	
+	  public void WriteDeposit() {
+
+		    try {
+		      FileWriter myWriter = new FileWriter("Log.txt");
+		      
+		      myWriter.write(userAccount.getUserDeposit()); //CHECK IF getUSerDeposit IS CORRECTLY USED
+		      myWriter.close();
+		      
+		      System.out.println("Successfully wrote to the file.");
+		    } catch (IOException e) {
+		      System.out.println("An error occurred.");
+		      e.printStackTrace();
+		    }
+		  }
+	
+	  public void WriteAccountBalance() {
+
+		    try {
+		      FileWriter myWriter = new FileWriter("Log.txt");
+		      
+		      myWriter.write(userAccount.getAccountBalance()); //CHECK IF getUSerDeposit IS CORRECTLY USED
+		      myWriter.close();
+		      
+		      System.out.println("Successfully wrote to the file.");
+		    } catch (IOException e) {
+		      System.out.println("An error occurred.");
+		      e.printStackTrace();
+		    }
+		  }
+	
+	  
 	private String getDateAndTime() {
 
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd/yyyy hh:mm:ss a");
