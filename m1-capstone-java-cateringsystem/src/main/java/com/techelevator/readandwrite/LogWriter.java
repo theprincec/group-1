@@ -15,7 +15,7 @@ import java.util.List;
 
 public class LogWriter {
 
-	UserAccount userAccount = new UserAccount(0);
+	UserAccount userAccount = new UserAccount();
 	
 	  public static void main(String[] args) {
 		    try {

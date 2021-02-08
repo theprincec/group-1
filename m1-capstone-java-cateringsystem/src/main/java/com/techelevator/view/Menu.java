@@ -30,7 +30,7 @@ public class Menu {
 	ObjectConverter objectConverter = new ObjectConverter();
 	CsvReader csvReader = new CsvReader();
 	
-	UserAccount userAccount = new UserAccount(0);
+	UserAccount userAccount = new UserAccount();
 	FinalCart finalCart = new FinalCart();
 	Item item = new Item("","",0.0,50);
 	Checkout checkout = new Checkout();
@@ -47,7 +47,7 @@ public class Menu {
 		return in.nextLine();
 	}
 
-		
+	
 	public String placeOrderScreen() {
 	
 		System.out.println(" Order ");
@@ -66,7 +66,7 @@ public class Menu {
 			 placeOrderSelection();	
 		}
 		else if (userChoice.equals("3")) {
-			//return "";//checkout.checkoutmethod;
+			checkoutMenu();
 		} return mainMenuDisplay();
 	}
 	
@@ -177,14 +177,11 @@ public class Menu {
 		else {
 			return "Not a valid selection ";
 		}
-		
+		 return "";
 		
 	
 		
 		
-		//User selects checkout and it updates balance and goes to MainMenu
-		
-		return null;
 		
 	}
 		
