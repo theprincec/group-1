@@ -18,7 +18,7 @@ public class Item {
 		this.productName = name;
 		this.price = price;
 		this.productCode = productCode;
-		this.itemQuantity =itemQuantity;
+		this.itemQuantity = 50;
 	}
 
 
@@ -60,6 +60,15 @@ public class Item {
 		return itemQuantity+=numberOfItems;
 		}
 */
+
+	public void setItemQuantity(int itemQuantity) {
+		this.itemQuantity = itemQuantity;
+	}
+
+
+
+
+
 
 	public String addItem (int numberOfItems) {
 

@@ -10,6 +10,10 @@ public class UserAccount {
 		return accountBalance;
 	}
 
+	public void setAccountBalance(double accountBalance) {
+		this.accountBalance = accountBalance;
+	}
+
 	public UserAccount(double accountBalance) {
 		this.accountBalance = 0;
 	}

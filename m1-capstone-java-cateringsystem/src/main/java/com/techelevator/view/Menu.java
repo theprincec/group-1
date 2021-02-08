@@ -66,17 +66,19 @@ public class Menu {
 		} return mainMenuDispay();
 	}
 	
-	
+	String userInputSelect= "";
+			
 	public String placeOrderSelection() {
 		System.out.println(" Order ");
 		System.out.println(" ================================================== ");
 		System.out.println(" 1) Make a selection ");
 		
-		String userInput = in.nextLine();
+		userInputSelect = in.nextLine();
+		
 		Map<String, Item> newMapofItems = new LinkedHashMap<String, Item>();
 		newMapofItems = objectConverter.mapMaker();
 
-		if (newMapofItems.containsKey(userInput)) {
+		if (newMapofItems.containsKey(userInputSelect)) {
 			return placeOrderQuantity();
 			
 
@@ -100,6 +102,7 @@ public class Menu {
 		System.out.println(" 2) select quantity ");
 		
 		String userInput = in.nextLine();
+		
 		Map <String,Item>newMapofItems = objectConverter.mapMaker();
 		int userInputQuantityAsInt = 0;
 		userInputQuantityAsInt = Integer.parseInt(userInput);
@@ -108,7 +111,7 @@ public class Menu {
 	
 		
 		if(userInputQuantityAsInt <= item.getItemQuantity()) {
-			finalCart.addItem(newMapofItems.get(userInput) , userInputQuantityAsInt); //Throws Number Format Exception
+			finalCart.addItem(newMapofItems.get(userInputSelect) , userInputQuantityAsInt); //Throws Number Format Exception
 			System.out.print("Your item was added to your cart. Make another selection");
 			System.out.println();
 		} 

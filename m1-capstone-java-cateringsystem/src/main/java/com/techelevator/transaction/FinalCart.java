@@ -33,6 +33,7 @@ public  class FinalCart {
 //		return cartTotal;
 //	}
 
+	
 	public  Map<Item, Integer> addItem (Item item, int numberOfItems) {
 
 
@@ -43,7 +44,7 @@ public  class FinalCart {
 		
 			} else if (item.getItemQuantity()  - numberOfItems >= 0) {
 				cartMap.put(item, numberOfItems ); 
-				item.getItemQuantity() -= numberOfItems;
+				item.setItemQuantity(item.getItemQuantity() - numberOfItems);// = item.getItemQuantity - numberOfItems;
 			} else if (item.getItemQuantity()  - numberOfItems < 0) {
 			System.out.println("There are only " + item.getItemQuantity()  + " left");
 			}
