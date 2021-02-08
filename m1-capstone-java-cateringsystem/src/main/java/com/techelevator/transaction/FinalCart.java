@@ -32,6 +32,14 @@ public  class FinalCart {
 //	public double getCartTotal() {
 //		return cartTotal;
 //	}
+	
+	
+	
+	
+	public Map<Item, Integer> getCartMap() {
+		return cartMap;
+	}
+	
 
 	
 	public  Map<Item, Integer> addItem (Item item, int numberOfItems) {
@@ -60,7 +68,9 @@ public  class FinalCart {
 	
 
 	
-	
+
+
+
 	public double getCartTotal() {
 	
 		for (Entry<Item, Integer> entry : cartMap.entrySet()) {

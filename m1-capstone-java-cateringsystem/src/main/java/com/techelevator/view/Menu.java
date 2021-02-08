@@ -4,6 +4,7 @@ package com.techelevator.view;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.Map.Entry;
 
 import com.techelevator.item.Appetizer;
 import com.techelevator.item.Beverage;
@@ -13,6 +14,7 @@ import com.techelevator.item.Item;
 import com.techelevator.readandwrite.*;
 import com.techelevator.transaction.FinalCart;
 import com.techelevator.transaction.UserAccount;
+import com.techelevator.transaction.Checkout;
 
 
 /*
@@ -31,6 +33,7 @@ public class Menu {
 	UserAccount userAccount = new UserAccount(0);
 	FinalCart finalCart = new FinalCart();
 	Item item = new Item("","",0.0,50);
+	Checkout checkout = new Checkout();
 	
 	
 	public String mainMenuDisplay() {
@@ -150,8 +153,33 @@ public class Menu {
 	public String checkoutMenu() {
 		
 		
-		//display Cart total
-		//Display Current Cart Items
+		System.out.println("Checkout");
+		System.out.println("==============================");
+		
+		System.out.println("Your current Account Balance is:" + userAccount.getAccountBalance());
+		
+		for (Entry<Item, Integer> entry : finalCart.getCartMap().entrySet()) {
+			System.out.println(entry);	
+		}
+		
+		System.out.println( "Cart Total: $" + finalCart.getCartTotal());
+		
+		
+		System.out.println("==============================");
+		System.out.println();
+		System.out.println("Enter 1 to checkout");
+		
+		String userInput = in.nextLine();
+		
+		if (userInput.equals("1")) {
+			checkout.takePayment();
+		}
+		else {
+			return "Not a valid selection ";
+		}
+		
+		
+	
 		
 		
 		//User selects checkout and it updates balance and goes to MainMenu
