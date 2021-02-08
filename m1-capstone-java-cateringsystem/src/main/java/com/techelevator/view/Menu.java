@@ -30,7 +30,7 @@ public class Menu {
 	ObjectConverter objectConverter = new ObjectConverter();
 	CsvReader csvReader = new CsvReader();
 	
-	UserAccount userAccount = new UserAccount(0);
+	UserAccount userAccount = new UserAccount();
 	FinalCart finalCart = new FinalCart();
 	Item item = new Item("","",0.0,50);
 	Checkout checkout = new Checkout();
