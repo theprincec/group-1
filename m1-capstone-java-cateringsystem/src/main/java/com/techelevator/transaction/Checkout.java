@@ -17,15 +17,21 @@ public  class Checkout {
 	
 	FinalCart finalCart = new FinalCart();
 	
-	
+	UserAccount userAccount = new UserAccount();
 	//UserAccount - final Cart Balance
 	//print cart items to the log
 	
 	public double takePayment() {
 		
-		userAccount.getAccountBalance - finalcart.getCartTotal();
+		double accountBalanceAfterPayment = 0;
+		accountBalanceAfterPayment = userAccount.getAccountBalance() - finalCart.getCartTotal();
+		userAccount.setAccountBalance(accountBalanceAfterPayment);
+		return userAccount.getAccountBalance();
 		
+		//userAcc - finalcart.getCartTotal();	
 	}
+	
+	
 	
 //Set AccountBalance
 	

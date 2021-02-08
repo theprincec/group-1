@@ -14,7 +14,7 @@ public class UserAccount {
 		this.accountBalance = accountBalance;
 	}
 
-	public UserAccount(double accountBalance) {
+	public UserAccount() {
 		this.accountBalance = 0;
 	}
 	
