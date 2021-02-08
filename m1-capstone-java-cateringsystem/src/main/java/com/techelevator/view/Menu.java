@@ -37,7 +37,7 @@ public class Menu {
 	Checkout checkout = new Checkout();
 	LogWriter logWriter = new LogWriter();
 	
-	
+	//String userMenuSelect = "";
 	public String mainMenuDisplay() {
 		
 		System.out.println( " Main Menu ");
@@ -46,7 +46,29 @@ public class Menu {
 		System.out.println(" 2) Order " );
 		System.out.println(" 3) Checkout" );
 		System.out.println(" 4) Quit") ;
-		return in.nextLine();
+
+		String userChoice = in.nextLine();
+		
+		if (userChoice.equals("1")) {
+			 csvReader.getItemsFromFilePrint(); 
+		}
+		
+		 if (userChoice.equals("2")) {
+			 placeOrderScreen();	
+		}
+		if (userChoice.equals("3")) {
+			checkoutMenu();
+		if (userChoice.equals("4")) {
+			System.exit(0);
+			System.out.println();
+            System.out.println("Thanks for Shopping");
+        }
+		else {
+			 System.exit(0);
+		}
+	} return mainMenuDisplay();
+		
+
 	}
 
 	
@@ -64,14 +86,15 @@ public class Menu {
 		if (userChoice.equals("1")) {
 			 askForUserDeposit();
 		}
-		else if (userChoice.equals("2")) {
+		 if (userChoice.equals("2")) {
 			 placeOrderSelection();	
 		}
-		else if (userChoice.equals("3")) {
+		 if (userChoice.equals("3")) {
 			checkoutMenu();
-		} return mainMenuDisplay();
+		 return mainMenuDisplay();
 	}
-	
+		return "";
+	}
 	String userInputSelect= "";
 			
 	public String placeOrderSelection() {

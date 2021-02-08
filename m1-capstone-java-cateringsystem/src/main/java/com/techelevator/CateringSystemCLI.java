@@ -2,10 +2,13 @@ package com.techelevator;
 
 import java.util.List;
 
-
-
+import com.techelevator.item.Item;
 import com.techelevator.readandwrite.CsvReader;
+import com.techelevator.readandwrite.LogWriter;
 import com.techelevator.readandwrite.ObjectConverter;
+import com.techelevator.transaction.Checkout;
+import com.techelevator.transaction.FinalCart;
+import com.techelevator.transaction.UserAccount;
 import com.techelevator.view.Menu;
 
 /*
@@ -27,8 +30,16 @@ public class CateringSystemCLI {
 	 */
 	private Menu menu;
 	private CsvReader csvreader;
-	private ObjectConverter objectConverter;
-	private int choice = 0;
+	
+	ObjectConverter objectConverter = new ObjectConverter();
+	CsvReader csvReader = new CsvReader();
+	
+	UserAccount userAccount = new UserAccount();
+	FinalCart finalCart = new FinalCart();
+	Item item = new Item("","",0.0,50);
+	Checkout checkout = new Checkout();
+	LogWriter logWriter = new LogWriter();
+	
 	
 
 	/*
@@ -66,15 +77,16 @@ public class CateringSystemCLI {
 	            if (choice.equals("1")) {
 	                csvreader.getItemsFromFilePrint(); 
 	                menu.mainMenuDisplay();
+	          
 	            }
 	            
-	             else if (choice.equals("2")) {
-	                menu.placeOrderScreen();
-	                
-	            }   else if (choice.equals("3")) {
-	            	 System.out.println();
-		             System.out.println("Thanks for Shopping");
-		                     
+	            else if (choice.equals("2")) {
+	                 menu.placeOrderScreen();
+	                 break;   
+	            }   
+	            else  if (choice.equals("3")) {
+	            	menu.checkoutMenu();
+	            	break;        
 	            }
 	            
 	            else if (choice.equals("4")); {
