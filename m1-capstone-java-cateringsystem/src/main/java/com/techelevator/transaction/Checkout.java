@@ -21,11 +21,11 @@ public  class Checkout {
 	//UserAccount - final Cart Balance
 	//print cart items to the log
 	
-	public double takePayment() {
+	//public double takePayment() {
 		
-		userAccount.getAccountBalance - finalcart.getCartTotal();
-		
-	}
+	//	userAccount.getAccountBalance - finalcart.getCartTotal();
+		//return 0.0;
+	//}
 	
 //Set AccountBalance
 	

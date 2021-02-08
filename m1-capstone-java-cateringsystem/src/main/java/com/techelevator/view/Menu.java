@@ -39,7 +39,8 @@ public class Menu {
 		System.out.println(" ================================================= ");		
 		System.out.println(" 1) Display Catering Items " );
 		System.out.println(" 2) Order " );
-		System.out.println(" 3) Quit " );
+		System.out.println(" 3) Checkout" );
+		System.out.println(" 4) Quit") ;
 		return in.nextLine();
 	}
 
@@ -69,9 +70,10 @@ public class Menu {
 	String userInputSelect= "";
 			
 	public String placeOrderSelection() {
-		System.out.println(" Order ");
+		System.out.println(" Make a selection ");
 		System.out.println(" ================================================== ");
-		System.out.println(" 1) Make a selection ");
+		System.out.println(" Enter Product Code");
+		System.out.println();
 		System.out.println(" 2) Main Menu ");
 		
 		userInputSelect = in.nextLine();
@@ -102,7 +104,7 @@ public class Menu {
 		
 	public String placeOrderQuantity(){
 		System.out.println(" ================================================== ");
-		System.out.println(" 2) select quantity ");
+		System.out.println("Enter quantity ");
 		
 		String userInput = in.nextLine();
 		
