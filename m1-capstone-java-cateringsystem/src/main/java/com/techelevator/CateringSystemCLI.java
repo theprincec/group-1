@@ -71,9 +71,13 @@ public class CateringSystemCLI {
 	             else if (choice.equals("2")) {
 	                menu.placeOrderScreen();
 	                
-	            }   
+	            }   else if (choice.equals("3")) {
+	            	 System.out.println();
+		             System.out.println("Thanks for Shopping");
+		                     
+	            }
 	            
-	            else if (choice.equals("3")); {
+	            else if (choice.equals("4")); {
 	                System.out.println();
 	                System.out.println("Thanks for Shopping");
 	                break;  

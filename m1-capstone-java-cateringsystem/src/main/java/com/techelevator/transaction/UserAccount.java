@@ -5,6 +5,11 @@ public class UserAccount {
 
 	private double accountBalance;
 	
+	
+	public String getUserDeposit() {
+;		return addMoneyToAccount(accountBalance);
+	}
+	
 
 	public double getAccountBalance() {
 		return accountBalance;
