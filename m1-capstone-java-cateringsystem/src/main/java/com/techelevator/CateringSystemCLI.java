@@ -61,11 +61,11 @@ public class CateringSystemCLI {
 				THEN go to the purchase menu
 			*/
 				
-			  String choice = menu.mainMenuDispay();
+			  String choice = menu.mainMenuDisplay();
 
 	            if (choice.equals("1")) {
 	                csvreader.getItemsFromFilePrint(); 
-	                System.out.println(); 
+	                menu.mainMenuDisplay();
 	            }
 	            
 	             else if (choice.equals("2")) {

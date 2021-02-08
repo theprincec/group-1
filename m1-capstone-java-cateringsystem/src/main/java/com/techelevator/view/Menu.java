@@ -33,7 +33,7 @@ public class Menu {
 	Item item = new Item("","",0.0,50);
 	
 	
-	public String mainMenuDispay() {
+	public String mainMenuDisplay() {
 		
 		System.out.println( " Main Menu ");
 		System.out.println(" ================================================= ");		
@@ -63,7 +63,7 @@ public class Menu {
 		}
 		else if (userChoice.equals("3")) {
 			//return "";//checkout.checkoutmethod;
-		} return mainMenuDispay();
+		} return mainMenuDisplay();
 	}
 	
 	String userInputSelect= "";
@@ -72,6 +72,7 @@ public class Menu {
 		System.out.println(" Order ");
 		System.out.println(" ================================================== ");
 		System.out.println(" 1) Make a selection ");
+		System.out.println(" 2) Main Menu ");
 		
 		userInputSelect = in.nextLine();
 		
@@ -82,7 +83,9 @@ public class Menu {
 			return placeOrderQuantity();
 			
 
-		}  
+		}  if (userInputSelect.equals("2")) {
+			return mainMenuDisplay();
+		}
 			System.out.println("This Is not a valid selection. Please select another item");
 			return placeOrderSelection();
 				
@@ -136,10 +139,24 @@ public class Menu {
 				System.out.println("Account balance cannot exceed $5000");
 			} if(deposit + userAccount.getAccountBalance() < 5000) {
 				userAccount.addMoneyToAccount(deposit);
-				System.out.println("Thanks for your deposit!");
-			} return placeOrderScreen();
+				System.out.println("Your account balance is $" + userAccount.getAccountBalance() + " after your deposit!");
+			} return mainMenuDisplay();
 	}
 
+
+	
+	public String checkoutMenu() {
+		
+		
+		//display Cart total
+		//Display Current Cart Items
+		
+		
+		//User selects checkout and it updates balance and goes to MainMenu
+		
+		return null;
+		
+	}
 		
 	private String checkItemType(Item item) {
 		if (item instanceof Appetizer) {
