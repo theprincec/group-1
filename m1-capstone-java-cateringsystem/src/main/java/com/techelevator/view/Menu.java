@@ -17,6 +17,7 @@ import com.techelevator.transaction.UserAccount;
 import com.techelevator.transaction.Checkout;
 
 
+
 /*
  * This is the only class that should have any usage of System.out or System.in
  */
@@ -34,6 +35,7 @@ public class Menu {
 	FinalCart finalCart = new FinalCart();
 	Item item = new Item("","",0.0,50);
 	Checkout checkout = new Checkout();
+	LogWriter logWriter = new LogWriter();
 	
 	
 	public String mainMenuDisplay() {
@@ -88,7 +90,7 @@ public class Menu {
 			return placeOrderQuantity();
 			
 
-		}  if (userInputSelect.equals("2")) {
+		} else if (userInputSelect.equals("2")) {
 			return mainMenuDisplay();
 		}
 			System.out.println("This Is not a valid selection. Please select another item");
@@ -144,6 +146,7 @@ public class Menu {
 				System.out.println("Account balance cannot exceed $5000");
 			} if(deposit + userAccount.getAccountBalance() < 5000) {
 				userAccount.addMoneyToAccount(deposit);
+				logWriter.WriteDeposit();
 				System.out.println("Your account balance is $" + userAccount.getAccountBalance() + " after your deposit!");
 			} return mainMenuDisplay();
 	}
@@ -173,6 +176,10 @@ public class Menu {
 		
 		if (userInput.equals("1")) {
 			checkout.takePayment();
+			logWriter.WriteOrderItems();
+			logWriter.WriteChange();
+			
+			
 		}
 		else {
 			return "Not a valid selection ";
