@@ -15,7 +15,10 @@ import com.techelevator.readandwrite.*;
 import com.techelevator.transaction.FinalCart;
 import com.techelevator.transaction.UserAccount;
 import com.techelevator.transaction.Checkout;
+import com.techelevator.transaction.Change;
 
+
+// **** ln208
 
 
 /*
@@ -36,6 +39,7 @@ public class Menu {
 	Item item = new Item("","",0.0,50);
 	Checkout checkout = new Checkout();
 	LogWriter logWriter = new LogWriter();
+	Change change = new Change();
 	
 	//String userMenuSelect = "";
 	public String mainMenuDisplay() {
@@ -201,6 +205,7 @@ public class Menu {
 			checkout.takePayment();
 			logWriter.WriteOrderItems();
 			logWriter.WriteChange();
+			change.printChange(userAccount.getAccountBalance());
 			
 			
 		}
